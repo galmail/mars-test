@@ -1,0 +1,19 @@
+/* Robot.css */
+
+.Robot {
+	border: solid #f7f7f9;
+	padding: 1.5rem;
+	margin: 10px;
+}
+
+.Robot .title {
+	margin-top: 0;
+	margin-bottom: 10px;
+}
+
+.Robot label {
+	margin-top: 6px;
+	text-align: left;
+}
+
+
