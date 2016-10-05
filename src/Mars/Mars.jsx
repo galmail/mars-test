@@ -1,4 +1,3 @@
-//import async from 'async';
 import React, { Component } from 'react';
 import Robots from '../Robot/Robots';
 import './Mars.css';
@@ -13,6 +12,7 @@ class Mars extends Component {
     this.updateRobots = this.updateRobots.bind(this);
     this.runNextRobot = this.runNextRobot.bind(this);
     this.addRobot = this.addRobot.bind(this);
+    this.validateForm = this.validateForm.bind(this);
     this.state = {
       ready: true,
       dimension: "5 3",
@@ -103,20 +103,24 @@ class Mars extends Component {
     this.setState(Object.assign(this.state, {robots: robots}));
   }
 
+  validateForm(e){
+    if(e.target.classList.contains('disabled')) e.preventDefault();
+  }
+
   render() {
     return (
       <div className="Mars">
         <h1>Mars Test using React</h1>
         <p>Refresh the page to initialize the state</p>
-        <form onSubmit={this.runTest}>          
+        <form data-toggle="validator" role="form" onSubmit={this.runTest}>          
           <div className="form-group">
             <label htmlFor="dimension">Mars Dimension</label>
-            <input onChange={this.setDimension} type="text" className="form-control" id="dimension" aria-describedby="dimensionHelp" placeholder="Enter Mars Dimension (e.g. 5 3)" value={this.state.dimension} />
-            <small id="dimensionHelp" className="form-text text-muted">In the format of x y, where x and y are integers.</small>
+            <input pattern="\d{1,2}\s\d{1,2}" maxLength="5" onChange={this.setDimension} type="text" className="form-control" id="dimension" aria-describedby="dimensionHelp" placeholder="such as: 5 3" value={this.state.dimension}  data-error="Invalid format. Use x y, where x and y are integers"/>
+            <div className="help-block with-errors"></div>
           </div>
           <Robots robots={this.state.robots} dimension={this.state.dimension} scents={this.state.scents} onChange={this.updateRobots} whenDone={this.runNextRobot}/>
           <button onClick={this.addRobot} type="button" className="btn btn-primary">Add Robot</button>
-          <button disabled={!this.state.ready} type="submit" className="btn btn-primary btn-lg btn-block run-test-btn">Run Test</button>
+          <button onClick={this.validateForm} disabled={!this.state.ready} type="submit" className="btn btn-primary btn-lg btn-block run-test-btn">Run Test</button>
         </form>
       </div>
     );
