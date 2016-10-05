@@ -16,7 +16,7 @@ class Position extends Component {
     const yPos = parseInt(newPosition.split(' ')[1], 10);
     const width = parseInt(dimension.split(' ')[0], 10);
     const height = parseInt(dimension.split(' ')[1], 10);
-    return (xPos <= width && yPos <= height);
+    return (xPos >= 0 && xPos <= width && yPos >= 0 && yPos <= height);
   }
 
   static hasScent(lastPosition,scents){
