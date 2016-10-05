@@ -47,6 +47,8 @@ class Robot extends Component {
 
   componentWillUpdate(nextProps, nextState){
     if(!this.state.run && nextProps.run){
+      // reset the robot state and run
+      this.setState(Object.assign(this.state,{instructions: nextProps.instructions, positions: [ nextProps.position ]}));
       this.run(nextProps);
     }
   }

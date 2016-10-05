@@ -37,8 +37,18 @@ class Mars extends Component {
     };
   }
 
+  clearPreviousRun(){
+    // remove scents and for each robot, remove all positions except the initial
+    const newRobots = this.state.robots.map((robot)=>{
+      return Object.assign(robot,{ positions: [robot.positions[0]]});
+    });
+    this.setState(Object.assign(this.state,{ scents: [], robots: newRobots}));
+  }
+
   runTest(e) {
     e.preventDefault();
+    // clear previous run
+    this.clearPreviousRun();
     console.log("Starting the test with state:",this.state);
     // we start by running the first robot which will trigger the next one on callback
     const firstRobot = Object.assign(this.state.robots[0],{run: true});
