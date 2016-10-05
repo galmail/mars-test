@@ -115,7 +115,7 @@ class Mars extends Component {
         <form data-toggle="validator" role="form" onSubmit={this.runTest}>          
           <div className="form-group">
             <label htmlFor="dimension">Mars Dimension</label>
-            <input pattern="\d{1,2}\s\d{1,2}" maxLength="5" onChange={this.setDimension} type="text" className="form-control" id="dimension" aria-describedby="dimensionHelp" placeholder="such as: 5 3" value={this.state.dimension}  data-error="Invalid format. Use x y, where x and y are integers"/>
+            <input pattern="\d{1,2}\s\d{1,2}" maxLength="5" onChange={this.setDimension} type="text" className="form-control" id="dimension" aria-describedby="dimensionHelp" placeholder="such as: 5 3" value={this.state.dimension} data-error="Invalid format. Use x y, where x and y are integers"/>
             <div className="help-block with-errors"></div>
           </div>
           <Robots robots={this.state.robots} dimension={this.state.dimension} scents={this.state.scents} onChange={this.updateRobots} whenDone={this.runNextRobot}/>

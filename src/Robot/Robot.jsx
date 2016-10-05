@@ -75,12 +75,14 @@ class Robot extends Component {
 			    <label className="col-md-4">Initial Position</label>
           <div className="col-md-8">
             <Position val={this.props.position} onChange={this.setInitialPosition} />
+            <div className="help-block with-errors"></div>
           </div>
 			  </div>
 			  <div className="form-group row">
 			    <label className="col-md-4">Instructions</label>
           <div className="col-md-8">
             <Instruction val={this.props.instructions} onChange={this.setInstructions} />
+            <div className="help-block with-errors"></div>
           </div>
 			  </div>
         <div className="form-group row">

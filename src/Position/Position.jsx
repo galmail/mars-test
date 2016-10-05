@@ -66,7 +66,7 @@ class Position extends Component {
 
   render() {
     return (
-    	<input readOnly={this.props.readOnly} onChange={this.onChange} type="text" className="form-control" value={this.props.val} />
+    	<input pattern="\d{1,2}\s\d{1,2}\s[N,S,E,W]" maxLength="7" data-error="Format Example: 1 2 N" readOnly={this.props.readOnly} onChange={this.onChange} type="text" className="form-control" value={this.props.val} />
     );
   }
 }

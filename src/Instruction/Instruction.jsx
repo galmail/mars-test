@@ -15,7 +15,7 @@ class Instruction extends Component {
 
   render() {
     return (
-    	<input onChange={this.onChange} type="text" className="form-control" value={this.props.val} />
+    	<input pattern="[R,L,F]+" maxLength="100" data-error="Format Example: FRRFLL" onChange={this.onChange} type="text" className="form-control" value={this.props.val} />
     );
   }
 
