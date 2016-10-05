@@ -71,4 +71,12 @@ class Position extends Component {
   }
 }
 
+/////////// Position Properties ///////////
+
+Position.propTypes = {
+  val: React.PropTypes.string,
+  onChange: React.PropTypes.func,
+  readOnly: React.PropTypes.bool
+};
+
 export default Position;

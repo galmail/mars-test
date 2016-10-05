@@ -15,10 +15,17 @@ class Instruction extends Component {
 
   render() {
     return (
-    	<input onChange={this.onChange} type="text" className="form-control" defaultValue={this.props.val} />
+    	<input onChange={this.onChange} type="text" className="form-control" value={this.props.val} />
     );
   }
 
 }
+
+/////////// Instruction Properties ///////////
+
+Instruction.propTypes = {
+  val: React.PropTypes.string,
+  onChange: React.PropTypes.func
+};
 
 export default Instruction;

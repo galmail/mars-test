@@ -94,4 +94,17 @@ class Robot extends Component {
   }
 }
 
+/////////// Robot Properties ///////////
+
+Robot.propTypes = {
+  run: React.PropTypes.bool,
+  id: React.PropTypes.number,
+  scents: React.PropTypes.array,
+  dimension: React.PropTypes.string,
+  position: React.PropTypes.string,
+  instructions: React.PropTypes.string,
+  onChange: React.PropTypes.func,
+  whenDone: React.PropTypes.func  
+};
+
 export default Robot;

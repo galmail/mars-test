@@ -12,4 +12,14 @@ class Robots extends Component {
 
 }
 
+/////////// Robots Properties ///////////
+
+Robots.propTypes = {
+  dimension: React.PropTypes.string,
+  robots: React.PropTypes.array,
+  scents: React.PropTypes.array,
+  onChange: React.PropTypes.func,
+  whenDone: React.PropTypes.func  
+};
+
 export default Robots;
